@@ -1,0 +1,136 @@
+# Define the 3-letter codes of residues we DON'T want to consiser. 
+# For monoatomic ions, we can also filter by the size of the formula
+non_spec_ligands = [# -- Common metals, ions and solvents
+                    '1PE', # PENTAETHYLENE GLYCOL
+                    '2HT', # 3-methylbenzonitrile
+                    '2PE', # NONAETHYLENE GLYCOL
+                    '7PE', # 2-(2-(2-(2-(2-(2-ETHOXYETHOXY)ETHOXY)ETHOXY)ETHOXY)ETHOXY)ETHANOL
+                    'ACT', # ACETATE ION
+                    'ACY', # ACETIC ACID
+                    'AKG', # 2-OXOGLUTARIC ACID
+                    'BCT', # BICARBONATE ION
+                    'BR' , # BROMIDE ION
+                    'BMA', # beta-D-mannopyranose
+                    'BME', # BETA-MERCAPTOETHANOL
+                    'BOG', # octyl beta-D-glucopyranoside
+                    'BU3', # (R,R)-2,3-BUTANEDIOL
+                    'BUD', # (2S,3S)-butane-2,3-diol
+                    'CAC', # CACODYLATE ION
+                    'CIT', # CITRIC ACID
+                    'CME', # S,S-(2-HYDROXYETHYL)THIOCYSTEINE
+                    'CO3', # CARBONATE ION
+                    'DMS', # DIMETHYL SULFOXIDE
+                    'DTT', # 2,3-DIHYDROXY-1,4-DITHIOBUTANE
+                    'DTV', # (2S,3S)-1,4-DIMERCAPTOBUTANE-2,3-DIOL
+                    'EDO', # 1,2-ETHANEDIOL
+                    'EPE', # 4-(2-HYDROXYETHYL)-1-PIPERAZINE ETHANESULFONIC ACID
+                    'FES', # FE2/S2 (INORGANIC) CLUSTER
+                    'FMT', # FORMIC ACID
+                    'GBL', # GAMMA-BUTYROLACTONE
+                    'GOL', # GLYCEROL
+                    'GSH', # GLUTATHIONE
+                    'HEC', # HEME C
+                    'HED', # 2-HYDROXYETHYL DISULFIDE
+                    'HEM', # PROTOPORPHYRIN IX CONTAINING FE
+                    'IMD', # IMIDAZOLE
+                    'IOD', # IODIDE ION
+                    'IPA', # ISOPROPYL ALCOHOL
+                    'MAN', # alpha-D-mannopyranose
+                    'MES', # 2-(N-MORPHOLINO)-ETHANESULFONIC ACID
+                    'MG8', # N-OCTANOYL-N-METHYLGLUCAMINE
+                    'MLI', # MALONATE ION
+                    'MPD', # (4S)-2-METHYL-2,4-PENTANEDIOL
+                    'MYR', # MYRISTIC ACID
+                    'NAG', # 2-acetamido-2-deoxy-beta-D-glucopyranose
+                    'NCO', # COBALT HEXAMMINE(III)
+                    'NH3', # AMMONIA
+                    'NO3', # NITRATE ION
+                    'OCT', # N-OCTANE
+                    'OGA', # N-OXALYLGLYCINE
+                    'OPG', # OXIRANPSEUDOGLUCOSE
+                    'P2U', # 2'-DEOXY-PSEUDOURIDINE-5'MONOPHOSPHATE
+                    'PEG', # DI(HYDROXYETHYL)ETHER
+                    'PG4', # TETRAETHYLENE GLYCOL
+                    'PGE', # TRIETHYLENE GLYCOL
+                    'PGO', # S-1,2-PROPANEDIOL
+                    'PHO', # PHEOPHYTIN A
+                    'PI' , # HYDROGENPHOSPHATE ION (INORGANIC PHOSPHATE)
+                    'PLP', # PYRIDOXAL-5'-PHOSPHATE
+                    'PO4', # PHOSPHATE ION
+                    'POP', # PYROPHOSPHATE 2-
+                    'PSE', # O-PHOSPHOETHANOLAMINE
+                    'PSU', # PSEUDOURIDINE-5'-MONOPHOSPHATE
+                    'PTL', # PENTANAL
+                    'SCN', # THIOCYANATE ION
+                    'SF4', # IRON/SULFUR CLUSTER
+                    'F3S', # FE3-S4 CLUSTER
+                    'SGM', # MONOTHIOGLYCEROL
+                    'SO4', # SULFATE ION
+                    'SPD', # SPERMIDINE
+                    'SPM', # SPERMINE
+                    'SRT', # S,R MESO-TARTARIC ACID
+                    'TAM', # TRIS(HYDROXYETHYL)AMINOMETHANE
+                    'TAR', # D(-)-TARTARIC ACID
+                    'TFA', # trifluoroacetic acid
+                    'TLA', # L(+)-TARTARIC ACID
+                    'TPP', # THIAMINE DIPHOSPHATE
+                    'TRS', # 2-AMINO-2-HYDROXYMETHYL-PROPANE-1,3-DIOL
+                    'WO4', # TUNGSTATE(VI)ION
+                    # -- Small ligands (MW < 50 D) --
+                    'CO2', # CARBON DIOXIDE
+                    'PEO', # HYDROGEN PEROXIDE
+                    'NH4', # AMMONIUM ION
+                    'EOH', # ETHANOL
+                    'CCN', # ACETONITRILE
+                    'MOH', # METHANOL
+                    'NO2', # NITRITE ION
+                    'ACE', # ACETYL GROUP
+                    'MEE', # METHANETHIOL
+                    '74C', # methyl radical
+                    'DMN', # DIMETHYLAMINE
+                    'FOR', # FORMYL GROUP
+                    'H2S', # HYDROSULFURIC ACID
+                    'NSM', # NITROSOMETHANE
+                    'ARF', # FORMAMIDE
+                    'HOA', # HYDROXYAMINE
+                    'HZN', # hydrazine
+                    'N2O', # NITROUS OXIDE
+                    'D3O', # trideuteriooxidanium
+                    '0NM', # cyanic acid
+                    'NH2', # AMINO GROUP
+                    'TME', # PROPANE
+                    'C2H', # acetylene
+                    'NEH', # ETHANAMINE
+                    'NME', # METHYLAMINE
+                    'CNN', # CYANAMIDE
+                    'BF2', # BERYLLIUM DIFLUORIDE
+                    '2NO', # NITROGEN DIOXIDE
+                    'MNC', # METHYL ISOCYANIDE
+                    'HDN', # METHYLHYDRAZINE
+                    # -- Ligands with 2-letter symbols
+                    'PC', # 'PHOSPHOCHOLINE'
+                    'EP', # 'EPOTHILONE A'
+                    'DC', # "2'-DEOXYCYTIDINE-5'-MONOPHOSPHATE"
+                    '5X', # '5R-(2E-METHYL-3-PHENYL-ALLYL)-3-(BENZENESULFONYLAMINO)-4-OXO-2-THIONOTHIAZOLIDINE'
+                    'AS', # "2-DEOXY-ADENOSINE -5'-THIO-MONOPHOSPHATE"
+                    'ET', # 'ETHIDIUM'
+                    'AA', # '9-AMINOACRIDINE'
+                    'T3', # "3,5,3'TRIIODOTHYRONINE"
+                    'DT', # "THYMIDINE-5'-MONOPHOSPHATE"
+                    '5H', # '5R-(4-BROMOPHENYLMETHYL)-3-(BENZENESULFONYLAMINO)-4-OXO-2-THIONOTHIAZOLIDINE'
+                    '1N', # '1-[(1~{R},2~{R},4~{S},5~{S})-2,4-bis(4-carbamimidamidophenoxy)-5-[(4-carbamimidamidophenyl)amino]cyclohexyl]guanidine'
+                    'DU', # "2'-DEOXYURIDINE-5'-MONOPHOSPHATE"
+                    'NQ', # '2-HYDROXYNAPHTHOQUINONE'
+                    'AO', # 'ACRIDINE ORANGE'
+                    'MC', # '1,2-CIS-1-HYDROXY-2,7-DIAMINO-MITOSENE'
+                    'Y3', # '4-ACETYLAMINO-5-HYDROXYNAPHTHALENE-2,7-DISULFONIC ACID'
+                    'DG', # "2'-DEOXYGUANOSINE-5'-MONOPHOSPHATE"
+                    'DA', # "2'-DEOXYADENOSINE-5'-MONOPHOSPHATE"
+                    'CG', # "4-AMIDINOINDAN-1-ONE-2'-AMIDINOHYDRAZONE"
+                    'VA', # '(Z)-OCTADEC-11-ENYL ACETATE'
+                    'DI', # "2'-DEOXYINOSINE-5'-MONOPHOSPHATE"
+                    'IU', # "5-IODOURIDINE-5'-MONOPHOSPHATE"
+                    'VI', # '1,3-DIPHENYL-1H-PYRAZOLE-4,5-DICARBOXYLIC ACID'
+                    'CH', # "N3-PROTONATED CYTIDINE-5'-MONOPHOSPHATE"
+                    'SQ', # '3-ETHYLAMINO-4-METHYLAMINO-CYCLOBUTANE-1,2-DIONE'
+                    ]
